@@ -1,0 +1,103 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">
+        <action name="LoginAction" class="com.vimal.its.action.LoginAction">
+            <result name="success">/statusok.jsp</result>
+            <result name="isloggedin">/statusok.jsp</result>
+            <result name="failure">/statusko.jsp</result>
+        </action>
+
+        <action name="getCategories" class="com.vimal.its.action.requester.GetCategoriesAction">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="getAssignedDevices" class="com.vimal.its.action.requester.GetAssignedDevicesAction">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="getPendingDevices" class="com.vimal.its.action.requester.GetPendingDevicesAction">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="getDevicesByCategory" class="com.vimal.its.action.requester.GetDevicesByCategoryAction">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="SubmitDeviceRequest" class="com.vimal.its.action.requester.SubmitDeviceRequestAction">
+            <result name="success">/statusok.jsp</result>
+            <result name="failure">/statusko.jsp</result>
+        </action>
+        <action name="getApprovedRequests" class="com.vimal.its.action.approver.GetApprovedRequestsAction">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="getRejectedRequests" class="com.vimal.its.action.approver.GetRejectedRequestsAction">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="getPendingRequestsForApproval" class="com.vimal.its.action.approver.GetPendingRequestsForApprovalAction">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="applyApproval" class="com.vimal.its.action.approver.ApprovalAction">
+            <result name="success">/statusok.jsp</result>
+            <result name="failure">/statusko.jsp</result>
+        </action>
+        <action name="addNewDevice" class="com.vimal.its.action.procurement.AddNewDeviceAction">
+            <result name="success">/statusok.jsp</result>
+            <result name="failure">/statusko.jsp</result>
+        </action>
+        <action name="getRequestsToAssign" class="com.vimal.its.action.procurement.GetRequestsToAssignAction">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="getStocksByDeviceId" class="com.vimal.its.action.procurement.GetStocksByDeviceIdAction">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="getAllDevices" class="com.vimal.its.action.procurement.GetAllDevicesAction">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="deleteDeviceById" class="com.vimal.its.action.procurement.DeleteDeviceByIdAction">
+            <result name="success">/statusok.jsp</result>
+            <result name="failure">/statusko.jsp</result>
+        </action>
+        <action name="getExpectedShipIn" class="com.vimal.its.action.warehouse.GetExpectedShipInAction">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="addStock" class="com.vimal.its.action.warehouse.AddStockAction">
+            <result name="success">/statusok.jsp</result>
+            <result name="failure">/statusko.jsp</result>
+        </action>
+                <action name="assignStockToRequest" class="com.vimal.its.action.warehouse.AssignStockToRequestAction">
+            <result name="success">/statusok.jsp</result>
+            <result name="failure">/statusko.jsp</result>
+        </action>
+    </package>
+</struts>
